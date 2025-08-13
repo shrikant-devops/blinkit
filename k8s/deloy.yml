@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: blinkit-deployment
+  labels:
+    app: blinkit
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: blinkit
+  template:
+    metadata:
+      labels:
+        app: blinkit
+    spec:
+      containers:
+      - name: blinkit
+        image: shrikantdevops/blinkit
+        ports:
+        - containerPort: 80
+
